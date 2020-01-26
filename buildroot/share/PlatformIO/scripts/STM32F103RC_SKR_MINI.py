@@ -1,7 +1,7 @@
 import os
 Import("env")
 
-STM32_FLASH_SIZE = 256
+STM32_FLASH_SIZE = 512
 
 for define in env['CPPDEFINES']:
     if define[0] == "VECT_TAB_ADDR":
