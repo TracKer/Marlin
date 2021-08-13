@@ -19,7 +19,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
-#if defined(ARDUINO_ARCH_STM32) && !defined(STM32GENERIC)
+#include "../../platforms.h"
+
+#ifdef HAL_STM32
 
 #include "../../../inc/MarlinConfig.h"
 
@@ -181,7 +183,7 @@ void LTDC_Config() {
   hltdc_F.Init.AccumulatedVBP = (LTDC_LCD_VSYNC + LTDC_LCD_VBP - 1);
   hltdc_F.Init.AccumulatedActiveH = (TFT_HEIGHT + LTDC_LCD_VSYNC + LTDC_LCD_VBP - 1);
   hltdc_F.Init.AccumulatedActiveW = (TFT_WIDTH + LTDC_LCD_HSYNC + LTDC_LCD_HBP - 1);
-  hltdc_F.Init.TotalHeigh = (TFT_HEIGHT + LTDC_LCD_VSYNC + LTDC_LCD_VBP + LTDC_LCD_VFP - 1);
+  hltdc_F.Init.TotalHeight = (TFT_HEIGHT + LTDC_LCD_VSYNC + LTDC_LCD_VBP + LTDC_LCD_VFP - 1);
   hltdc_F.Init.TotalWidth = (TFT_WIDTH + LTDC_LCD_HSYNC + LTDC_LCD_HBP + LTDC_LCD_HFP - 1);
 
   /* Configure R,G,B component values for LCD background color : all black background */
@@ -203,7 +205,7 @@ void LTDC_Config() {
   pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_RGB565;
 
   /* Start Address configuration : frame buffer is located at SDRAM memory */
-  pLayerCfg.FBStartAdress = (uint32_t)(FRAME_BUFFER_ADDRESS);
+  pLayerCfg.FBStartAddress = (uint32_t)(FRAME_BUFFER_ADDRESS);
 
   /* Alpha constant (255 == totally opaque) */
   pLayerCfg.Alpha = 255;
@@ -312,7 +314,7 @@ void TFT_LTDC::DrawImage(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uin
   uint16_t offline = TFT_WIDTH - (ex - sx);
   uint32_t addr = (uint32_t)&framebuffer[(TFT_WIDTH * sy) + sx];
 
-  CBI(DMA2D->CR, 0)
+  CBI(DMA2D->CR, 0);
   DMA2D->CR = 0 << 16;
   DMA2D->FGPFCCR = 0X02;
   DMA2D->FGOR = 0;
@@ -384,4 +386,4 @@ void TFT_LTDC::TransmitDMA(uint32_t MemoryIncrease, uint16_t *Data, uint16_t Cou
 }
 
 #endif // HAS_LTDC_TFT
-#endif // ARDUINO_ARCH_STM32 && !STM32GENERIC
+#endif // HAL_STM32
