@@ -597,13 +597,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  23.36,  23.36 }
-    #define DEFAULT_Ki_LIST {   1.73,   1.73 }
-    #define DEFAULT_Kd_LIST {  78.71,  78.71 }
+    #define DEFAULT_Kp_LIST {  23.38,  23.38 }
+    #define DEFAULT_Ki_LIST {   1.71,   1.71 }
+    #define DEFAULT_Kd_LIST {  79.96,  79.96 }
   #else
-    #define DEFAULT_Kp 23.36
-    #define DEFAULT_Ki 1.73
-    #define DEFAULT_Kd 78.71
+    #define DEFAULT_Kp 23.38
+    #define DEFAULT_Ki 1.71
+    #define DEFAULT_Kd 79.96
   #endif
 #endif // PIDTEMP
 
@@ -640,9 +640,9 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  #define DEFAULT_bedKp 106.04
-  #define DEFAULT_bedKi 14.33
-  #define DEFAULT_bedKd 523.13
+  #define DEFAULT_bedKp 75.56
+  #define DEFAULT_bedKi 12.76
+  #define DEFAULT_bedKd 298.23
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -915,7 +915,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 406.81 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 429.47 }
 
 /**
  * Default Max Feed Rate (mm/s)
