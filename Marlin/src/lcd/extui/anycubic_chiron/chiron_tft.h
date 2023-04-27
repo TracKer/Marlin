@@ -59,16 +59,16 @@ class ChironTFT {
   public:
     static void Startup();
     static void IdleLoop();
-    static void PrinterKilled(PGM_P,PGM_P);
+    static void PrinterKilled(FSTR_P, FSTR_P);
     static void MediaEvent(media_event_t);
     static void TimerEvent(timer_event_t);
     static void FilamentRunout();
-    static void ConfirmationRequest(const char * const );
-    static void StatusChange(const char * const );
+    static void ConfirmationRequest(const char * const);
+    static void StatusChange(const char * const);
     static void PowerLossRecovery();
     static void PrintComplete();
-    static void SendtoTFT(PGM_P);
-    static void SendtoTFTLN(PGM_P);
+    static void SendtoTFT(FSTR_P const=nullptr);
+    static void SendtoTFTLN(FSTR_P const=nullptr);
   private:
     static void DetectPanelType();
     static bool ReadTFTCommand();
@@ -76,7 +76,6 @@ class ChironTFT {
     static void CheckHeaters();
     static void SendFileList(int8_t);
     static void SelectFile();
-    static void InjectCommandandWait(PGM_P);
     static void ProcessPanelRequest();
     static void PanelInfo(uint8_t);
     static void PanelAction(uint8_t);
