@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2023 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -21,15 +21,11 @@
  */
 
 /**
-<<<<<<<< HEAD:Marlin/src/lcd/extui/anycubic/Tunes.cpp
- * lcd/extui/anycubic/Tunes.cpp
-========
  * lcd/extui/anycubic_chiron/Tunes.cpp
  *
  * Extensible_UI implementation for Anycubic Chiron
  * Written By Nick Wells, 2020 [https://github.com/SwiftNick]
  *  (not affiliated with Anycubic, Ltd.)
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/lcd/extui/anycubic_chiron/Tunes.cpp
  */
 
 /***********************************************************************
@@ -38,32 +34,16 @@
  ***********************************************************************/
 
 #include "../../../inc/MarlinConfigPre.h"
-<<<<<<<< HEAD:Marlin/src/lcd/extui/anycubic/Tunes.cpp
-========
 
 // TODO: Use Marlin's built-in tone player instead.
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/lcd/extui/anycubic_chiron/Tunes.cpp
 
-#if EITHER(ANYCUBIC_LCD_CHIRON, ANYCUBIC_LCD_VYPER)
+#if ENABLED(ANYCUBIC_LCD_CHIRON)
 
 #include "Tunes.h"
-<<<<<<<< HEAD:Marlin/src/lcd/extui/anycubic/Tunes.cpp
-#include "../../../libs/buzzer.h"
-========
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/lcd/extui/anycubic_chiron/Tunes.cpp
 #include "../ui_api.h"
 
 namespace Anycubic {
 
-<<<<<<<< HEAD:Marlin/src/lcd/extui/anycubic/Tunes.cpp
-  void PlayTune(const uint16_t *tune, const uint8_t speed/*=1*/) {
-    const uint16_t wholenotelen = tune[0] / speed;
-    for (uint8_t pos = 1; pos < MAX_TUNE_LENGTH; pos += 2) {
-      const uint16_t freq = tune[pos];
-      if (freq == n_END) break;
-      BUZZ(wholenotelen / tune[pos + 1], freq);
-    }
-========
   void PlayTune(uint8_t beeperPin, const uint16_t *tune, uint8_t speed=1) {
     uint8_t pos = 1;
     const uint16_t wholenotelen = tune[0] / speed;
@@ -74,9 +54,8 @@ namespace Anycubic {
       pos += 2;
       if (pos >= MAX_TUNE_LENGTH) break;
     } while (tune[pos] != n_END);
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/lcd/extui/anycubic_chiron/Tunes.cpp
   }
 
 }
 
-#endif // ANYCUBIC_LCD_CHIRON || ANYCUBIC_LCD_VYPER
+#endif // ANYCUBIC_LCD_CHIRON

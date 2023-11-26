@@ -21,19 +21,6 @@
  */
 #pragma once
 
-<<<<<<<< HEAD:Marlin/src/pins/stm32f4/pins_FYSETC_SPIDER_V2_2.h
-#define BOARD_INFO_NAME "FYSETC SPIDER V22"
-#define DEFAULT_MACHINE_NAME BOARD_INFO_NAME
-
-#define TEMP_3_PIN                          PC3
-#define TEMP_4_PIN                          PB1
-#define TEMP_BED_PIN                        PB0
-
-#define FAN0_PIN                            PA13
-#define FAN1_PIN                            PA14
-
-#include "pins_FYSETC_SPIDER.h"
-========
 namespace DGUSSetupHandler {
 
   #if ENABLED(SDSUPPORT)
@@ -53,4 +40,3 @@ namespace DGUSSetupHandler {
   bool Infos();
 
 }
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/lcd/extui/dgus_reloaded/DGUSSetupHandler.h

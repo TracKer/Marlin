@@ -1,10 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
-<<<<<<<< HEAD:Marlin/src/lcd/e3v2/proui/printstats.h
- * Copyright (c) 2021 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
-========
  * Copyright (c) 2022 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/HAL/SAMD21/u8g/LCD_I2C_routines.cpp
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -25,24 +21,6 @@
  */
 
 /**
-<<<<<<<< HEAD:Marlin/src/lcd/e3v2/proui/printstats.h
- * Print Stats page for PRO UI
- * Author: Miguel A. Risco-Castillo (MRISCOC)
- * Version: 1.4.2
- * Date: 2022/12/03
- */
-
-class PrintStatsClass {
-public:
-  static void Draw();
-  static void Reset();
-};
-
-extern PrintStatsClass PrintStats;
-
-void Goto_PrintStats();
-void PrintStatsReset();
-========
  * SAMD21 HAL developed by Bart Meijer (brupje)
  * Based on SAMD51 HAL by Giuliano Zaro (AKA GMagician)
  */
@@ -52,4 +30,3 @@ void PrintStatsReset();
 #ifdef __SAMD21__
 
 #endif // __SAMD21__
->>>>>>>> 09d0b4d15228b3efb6fd765f1e1574f521df2e27:Marlin/src/HAL/SAMD21/u8g/LCD_I2C_routines.cpp
