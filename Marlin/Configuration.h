@@ -666,13 +666,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify up to one value per hotend here, according to your setup.
     // If there are fewer values, the last one applies to the remaining hotends.
-    #define DEFAULT_Kp_LIST {  23.67,  23.67 }
-    #define DEFAULT_Ki_LIST {   1.72,   1.72 }
-    #define DEFAULT_Kd_LIST {  81.43,  81.43 }
+    #define DEFAULT_Kp_LIST {  23.87,  23.87 }
+    #define DEFAULT_Ki_LIST {   1.74,   1.74 }
+    #define DEFAULT_Kd_LIST {  81.63,  81.63 }
   #else
-    #define DEFAULT_Kp  23.67
-    #define DEFAULT_Ki   1.72
-    #define DEFAULT_Kd  81.43
+    #define DEFAULT_Kp 23.87
+    #define DEFAULT_Ki  1.74
+    #define DEFAULT_Kd 81.63
   #endif
 #endif
 
@@ -753,9 +753,9 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Print Bed PID debug data to the serial port.
 
-  #define DEFAULT_bedKp 93.87
-  #define DEFAULT_bedKi 17.78
-  #define DEFAULT_bedKd 330.43
+  #define DEFAULT_bedKp 216.80
+  #define DEFAULT_bedKi 34.74
+  #define DEFAULT_bedKd 901.88
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
