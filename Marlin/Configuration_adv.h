@@ -1533,6 +1533,9 @@
   //#define SD_IGNORE_AT_STARTUP            // Don't mount the SD card when starting up
   //#define SDCARD_READONLY                 // Read-only SD card (to save over 2K of flash)
 
+  //This its another option to emulate an EEPROM, but its more efficient to dont loose the data the first One.
+  #define SDCARD_EEPROM_EMULATION             // Use SDCARD for storing EEPROM
+
   //#define GCODE_REPEAT_MARKERS            // Enable G-code M808 to set repeat markers and do looping
 
   #define SD_PROCEDURE_DEPTH 1              // Increase if you need more nested M32 calls
